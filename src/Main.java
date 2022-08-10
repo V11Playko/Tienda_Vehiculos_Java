@@ -1,5 +1,16 @@
+import database.DbConnection;
+
+import java.sql.Connection;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        DbConnection connection = new DbConnection();
+
+        try (Connection cnx = connection.getConnection()){
+
+        }catch (Exception e){
+            System.out.println(e);
+        }
     }
 }
