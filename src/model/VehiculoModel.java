@@ -1,19 +1,17 @@
 package model;
 
-import java.sql.Timestamp;
-
 public class VehiculoModel {
 
     int id_vehiculo;
     String tipo_vehiculo;
     String propietario;
-    Timestamp fecha_de_adquisicion;
+    String fecha_de_adquisicion;
     String color;
     String marca;
 
     public VehiculoModel(){}
 
-    public VehiculoModel(int id_vehiculo, String tipo_vehiculo, String propietario, Timestamp fecha_de_adquisicion, String color, String marca) {
+    public VehiculoModel(int id_vehiculo, String tipo_vehiculo, String propietario, String fecha_de_adquisicion, String color, String marca) {
         this.id_vehiculo = id_vehiculo;
         this.tipo_vehiculo = tipo_vehiculo;
         this.propietario = propietario;
@@ -38,7 +36,7 @@ public class VehiculoModel {
         return propietario;
     }
 
-    public Timestamp getFecha_de_adquisicion() {
+    public String getFecha_de_adquisicion() {
         return fecha_de_adquisicion;
     }
 
@@ -58,7 +56,7 @@ public class VehiculoModel {
         this.propietario = propietario;
     }
 
-    public void setFecha_de_adquisicion(Timestamp fecha_de_adquisicion) {
+    public void setFecha_de_adquisicion(String fecha_de_adquisicion) {
         this.fecha_de_adquisicion = fecha_de_adquisicion;
     }
 
