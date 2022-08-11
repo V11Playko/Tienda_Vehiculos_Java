@@ -4,7 +4,7 @@ import model.VehiculoModel;
 
 public class VehiculoDAO {
 
-    public static void crearVehiculoDB(VehiculoModel Vehiculo){
+    public static void comprarVehiculoDB(VehiculoModel Vehiculo){
 
     }
 
@@ -16,7 +16,4 @@ public class VehiculoDAO {
 
     }
 
-    public static void actualizarVehiculoDB(VehiculoModel Vehiculo) {
-        
-    }
 }
