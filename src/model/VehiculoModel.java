@@ -1,20 +1,33 @@
-package Vehiculos;
+package model;
 
 import java.sql.Timestamp;
 
-public class Vehiculo {
+public class VehiculoModel {
+
+    int id_vehiculo;
     String tipo_vehiculo;
     String propietario;
     Timestamp fecha_de_adquisicion;
     String color;
     String marca;
 
-    public Vehiculo(String tipo_vehiculo, String propietario, Timestamp fecha_de_adquisicion, String color, String marca) {
+    public VehiculoModel(){}
+
+    public VehiculoModel(int id_vehiculo, String tipo_vehiculo, String propietario, Timestamp fecha_de_adquisicion, String color, String marca) {
+        this.id_vehiculo = id_vehiculo;
         this.tipo_vehiculo = tipo_vehiculo;
         this.propietario = propietario;
         this.fecha_de_adquisicion = fecha_de_adquisicion;
         this.color = color;
         this.marca = marca;
+    }
+
+    public int getId_vehiculo() {
+        return id_vehiculo;
+    }
+
+    public void setId_vehiculo(int id_vehiculo) {
+        this.id_vehiculo = id_vehiculo;
     }
 
     public String getTipo_vehiculo() {
