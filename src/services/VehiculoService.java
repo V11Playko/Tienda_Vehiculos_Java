@@ -43,7 +43,7 @@ public class VehiculoService {
     }
 
     public static void listarVehiculos(){
-
+        VehiculoDAO.leerAtributosVehiculoDB();
     }
 
     public static void eliminarVehiculo(){
