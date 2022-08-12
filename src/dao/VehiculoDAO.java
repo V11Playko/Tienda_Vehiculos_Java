@@ -70,6 +70,25 @@ public class VehiculoDAO {
     }
 
     public static void eliminarVehiculoDB(int id_vehiculo){
+        DbConnection dbconnect = new DbConnection();
+
+        try (Connection conexion = dbconnect.getConnection()){
+            PreparedStatement ps = null;
+            try {
+                String query = "DELETE FROM vehiculos WHERE id_vehiculo = ?";
+                ps= conexion.prepareStatement(query);
+                ps.setInt(1, id_vehiculo);
+                ps.executeUpdate();
+                System.out.println("El vehiculo ha sido borrado de la base de datos.");
+
+            } catch (Exception e){
+                System.out.println(e);
+                System.out.println("No se pudo borrar el mensaje.");
+            }
+
+        }  catch (SQLException e) {
+            System.out.println(e);
+        }
 
     }
 

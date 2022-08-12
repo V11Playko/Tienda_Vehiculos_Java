@@ -47,6 +47,10 @@ public class VehiculoService {
     }
 
     public static void eliminarVehiculo(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Indica el ID del vehiculo que quieres borrar: ");
+        int id_vehiculo = sc.nextInt();
+        VehiculoDAO.eliminarVehiculoDB(id_vehiculo);
 
     }
 
