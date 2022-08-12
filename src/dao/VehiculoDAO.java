@@ -92,4 +92,29 @@ public class VehiculoDAO {
 
     }
 
+    public static void actualizarVehiculoDB(VehiculoModel Vehiculo){
+        DbConnection dbconnect = new DbConnection();
+
+        try (Connection conexion = dbconnect.getConnection()){
+            PreparedStatement ps = null;
+            try {
+                String query = "UPDATE vehiculos SET color = ? WHERE id_vehiculo = ?";
+                // UPDATE `vehiculos` SET `color` = 'Negro' WHERE `vehiculos`.`id_vehiculo` = 1;
+                //UPDATE vehiculos SET id_vehiculo = ? WHERE id_vehiculo = ?
+                ps= conexion.prepareStatement(query);
+                ps.setString(1, Vehiculo.getTipo_vehiculo());
+                ps.setString(2, Vehiculo.getPropietario());
+                ps.setString(3, Vehiculo.getFecha_de_adquisicion());
+                ps.setString(4, Vehiculo.getColor());
+                ps.setString(5, Vehiculo.getMarca());
+                ps.executeUpdate();
+                System.out.println("Se actualizaron los datos correctamente.");
+            } catch (Exception e){
+                System.out.println(e);
+            }
+
+        }   catch (SQLException e) {
+            System.out.println(e);
+        }
+    }
 }

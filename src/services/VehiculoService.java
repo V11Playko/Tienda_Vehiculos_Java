@@ -54,4 +54,20 @@ public class VehiculoService {
 
     }
 
+    public static void actualizarVehiculo(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Solo se puede cambiar el color del vehiculo despues de haberse vendido.");
+        System.out.println("--------------------------------------------");
+        System.out.println("Color nuevo que quieras poner al vehiculo:");
+        String col_veh = sc.nextLine();
+
+        System.out.println("Indica el ID del vehiculo a editar");
+        int id_vehiculo = sc.nextInt();
+        VehiculoModel actualizacion = new VehiculoModel();
+        actualizacion.setId_vehiculo(id_vehiculo);
+        actualizacion.setColor(col_veh);
+        VehiculoDAO.actualizarVehiculoDB(actualizacion);
+
+    }
+
 }

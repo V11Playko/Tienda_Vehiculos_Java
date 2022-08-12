@@ -14,8 +14,9 @@ public class Main {
             System.out.println(" Tienda de Vehiculos");
             System.out.println(" 1. Listar vehiculos");
             System.out.println(" 2. Comprar vehiculo");
-            System.out.println(" 3. Eliminar vehiculo");
-            System.out.println(" 4. Salir");
+            System.out.println(" 3. Actualizar datos vehiculo");
+            System.out.println(" 4. Eliminar vehiculo");
+            System.out.println(" 5. Salir");
 
             // leer opcion del usuario
             opcion = sc.nextInt();
@@ -28,13 +29,16 @@ public class Main {
                     VehiculoService.comprarVehiculo();
                     break;
                 case 3:
+                    VehiculoService.actualizarVehiculo();
+                    break;
+                case 4:
                     VehiculoService.eliminarVehiculo();
                     break;
                 default:
                     break;
             }
 
-        } while (opcion != 4);
+        } while (opcion != 5);
 
 
     }
