@@ -92,6 +92,8 @@ public class VehiculoDAO {
 
     }
 
+
+    // Actualizar el color esta fallando a veces.
     public static void actualizarVehiculoDB(VehiculoModel Vehiculo){
         DbConnection dbconnect = new DbConnection();
 
@@ -99,8 +101,7 @@ public class VehiculoDAO {
             PreparedStatement ps = null;
             try {
                 String query = "UPDATE vehiculos SET color = ? WHERE id_vehiculo = ?";
-                // UPDATE `vehiculos` SET `color` = 'Negro' WHERE `vehiculos`.`id_vehiculo` = 1;
-                //UPDATE vehiculos SET id_vehiculo = ? WHERE id_vehiculo = ?
+
                 ps= conexion.prepareStatement(query);
                 ps.setString(1, Vehiculo.getTipo_vehiculo());
                 ps.setString(2, Vehiculo.getPropietario());
